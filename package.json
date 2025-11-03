@@ -1,0 +1,30 @@
+{
+  "name": "sporttracker",
+  "version": "1.0.0",
+  "description": "Proyecto para la asignatura bases de datos 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:tailwind": "npx @tailwindcss/cli -i src/main/resources/static/css/input.css -o src/main/resources/static/css/main.css --watch",
+    "build:tailwind": "npx @tailwindcss/cli -i src/main/resources/static/css/input.css -o src/main/resources/static/css/main.css --minify" 
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CuervoTonto/sport_tracker_app/issues"
+  },
+  "homepage": "https://github.com/CuervoTonto/sport_tracker_app#readme",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
+    "postcss": "^8.5.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "tailwindcss": "^4.1.16"
+  }
+}
