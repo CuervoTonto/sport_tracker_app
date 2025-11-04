@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+  </head>
+  <body>
+    <div id="page">
+      <div class="w-6/12 mx-auto my-8 shadow p-8 rounded-xl bg-white">
+        <form method="post" class="" enctype="multipart/form-data">
+          <div>
+            <div class="text-xl font-bold mb-6">Crear usuario</div>
+          </div>
+          
+          <div class="grid grid-cols-12 gap-4">
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Username</div>
+                  <input
+                    name="username"
+                    type="text"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Nombre de usuario"
+                  />
+                </label>
+            </div>
+
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Primer nombre</div>
+                  <input
+                    name="primerNombre"
+                    type="text"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Primer nombre"
+                  />
+                </label>
+            </div>
+
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Segundo nombre</div>
+                  <input
+                    name="segundoNombre"
+                    type="text"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Segundo nombre"
+                  />
+                </label>
+            </div>
+
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Primer apellido</div>
+                  <input
+                    name="primerApellido"
+                    type="text"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Primer apellido"
+                  />
+                </label>
+            </div>
+
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Segundo Apellido</div>
+                  <input
+                    name="segundoApellido"
+                    type="text"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Segundo apellido"
+                  />
+                </label>
+            </div>
+
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Fecha de nacimiento</div>
+                  <input
+                    name="fechaNacimiento"
+                    type="date"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Segundo apellido"
+                  />
+                </label>
+            </div>
+
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Celular</div>
+                  <input
+                    name="celular"
+                    type="text"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Numero de contacto"
+                  />
+                </label>
+            </div>
+
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Correo</div>
+                  <input
+                    name="correo"
+                    type="email"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Correo Electronico"
+                  />
+                </label>
+            </div>
+
+            <div class="flex flex-col col-span-6">
+                <label class="input-field">
+                  <div class="input-field-label">Contraseña</div>
+                  <input
+                    name="clave"
+                    type="password"
+                    class="pt-2 w-full outline-none"
+                    placeholder="Contraseña"
+                  />
+                </label>
+            </div>
+
+          </div>
+
+          <div class="mt-6">
+            <button class="min-w-48 bg-slate-900 text-white p-2 rounded-lg">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
