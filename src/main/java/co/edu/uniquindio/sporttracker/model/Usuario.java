@@ -33,8 +33,7 @@ public class Usuario {
     @NotBlank
     private String celular;
 
-    @NotBlank
-    @Size(min = 8)
+    
     private String contrasenia;
 
     // --- Getters y Setters 
