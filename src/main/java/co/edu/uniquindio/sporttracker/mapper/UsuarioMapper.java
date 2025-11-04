@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
-import org.springframework.stereotype.Component;
 
+import co.edu.uniquindio.sporttracker.dto.usuario.ActualizarUsuarioPeticion;
 import co.edu.uniquindio.sporttracker.dto.usuario.CrearUsuarioPeticion;
 import co.edu.uniquindio.sporttracker.modelo.Usuario;
 
@@ -31,6 +31,21 @@ public class UsuarioMapper implements RowMapper<Usuario> {
     }
     
     public Usuario desdePeticion(CrearUsuarioPeticion peticion) {
+        Usuario usuario = new Usuario();
+        usuario.setUsername(peticion.getUsername());
+        usuario.setPrimerNombre(peticion.getPrimerNombre());
+        usuario.setSegundoNombre(peticion.getSegundoNombre());
+        usuario.setPrimerApellido(peticion.getPrimerApellido());
+        usuario.setSegundoApellido(peticion.getSegundoApellido());
+        usuario.setFechaNacimiento(peticion.getFechaNacimiento());
+        usuario.setCorreo(peticion.getCorreo());
+        usuario.setCelular(peticion.getCelular());
+        usuario.setClave(peticion.getClave());
+        
+        return usuario;
+    }
+
+    public Usuario desdePeticion(ActualizarUsuarioPeticion peticion) {
         Usuario usuario = new Usuario();
         usuario.setUsername(peticion.getUsername());
         usuario.setPrimerNombre(peticion.getPrimerNombre());
