@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+.input-field {
+  @apply rounded-xl border-gray-300 border rounded-lg p-2 px-3;
+}
+
+.input-field-label {
+  @apply text-xs block text-gray-400 font-bold;
+}
+
+.input-field:has(input:focus) {
+  @apply outline-2 outline-slate-800;
+}
+
+.btn-primary {
+ @apply bg-slate-800 rounded-lg p-2 px-3 text-white font-bold cursor-pointer;
+}
+
+.btn-small {
+  @apply p-1 px-3
+}
