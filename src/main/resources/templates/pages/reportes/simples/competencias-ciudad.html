@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Reporte Competencias por Ciudad</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <style>
+        @page { margin: 2cm; }
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        h1 { color: #1e3a8a; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 th:text="${tituloReporte}">Reporte</h1>
+        <p>Fecha de generación: <span th:text="${#dates.format(fechaActual, 'dd/MM/yyyy HH:mm')}"></span></p>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ciudad</th>
+                    <th>Total Competencias</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${items}">
+                    <td th:text="${item.ciudad}"></td>
+                    <td th:text="${item.totalCompetencias}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

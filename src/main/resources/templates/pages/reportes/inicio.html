@@ -1,27 +1,52 @@
-<html th:replace="~{components/layouts/app::appLayout('hola', ~{::content}, ~{::scripts})}">
+<html th:replace="~{components/layouts/app::appLayout('Reportes', ~{::content}, ~{::scripts})}">
   <div class="w-full h-full p-7" th:fragment="content">
-    <!-- reportes simple -->
+    
+    <!-- SECCIÓN 1: REPORTES SIMPLES -->
     <div class="">
-      <div class="font-bold text-xl">Reportes Simples</div>
-      <div class="grid grid-cols-4 justify-center place-items-center w-full my-4 gap-4">
-        <template th:replace="~{components/card::simpleCard('prueba', 'contenido prueba', null)}"></template>
+      <div class="font-bold text-xl text-gray-700 border-b pb-2 mb-4">Reportes Simples</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 1. Competencias por Ciudad -->
+        <template th:replace="~{components/card::simpleCard('Competencias por Ciudad', 'Total de eventos organizados por ubicación', '/reportes/simple/competencias-ciudad')}"></template>
+        
+        <!-- 2. Miembros por Grupo -->
+        <template th:replace="~{components/card::simpleCard('Miembros por Grupo', 'Cantidad de usuarios inscritos en cada grupo', '/reportes/simple/miembros-grupo')}"></template>
+        
+        <!-- 3. Metas Activas -->
+        <template th:replace="~{components/card::simpleCard('Metas Activas', 'Objetivos vigentes por usuario a la fecha', '/reportes/simple/metas-activas')}"></template>
       </div>
     </div>
-    <!-- reportes intermedios -->
-    <div class="mt-8">
-      <div class="font-bold text-xl">Reportes Intermedios</div>
-      <div class="grid grid-cols-4 justify-center place-items-center w-full my-4 gap-4">
-        <template th:replace="~{components/card::simpleCard('prueba', 'contenido prueba', null)}"></template>
+
+    <!-- SECCIÓN 2: REPORTES INTERMEDIOS -->
+    <div class="mt-10">
+      <div class="font-bold text-xl text-gray-700 border-b pb-2 mb-4">Reportes Intermedios</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 4. Distancia Acumulada -->
+        <template th:replace="~{components/card::simpleCard('Distancia Acumulada', 'Rendimiento y promedio diario anual', '/reportes/intermedio/distancia')}"></template>
+        
+        <!-- 5. Avance de Metas -->
+        <template th:replace="~{components/card::simpleCard('Avance de Metas', 'Porcentaje de completitud de objetivos', '/reportes/intermedio/avance-metas')}"></template>
+        
+        <!-- 6. Detalle Competencias -->
+        <template th:replace="~{components/card::simpleCard('Detalle Competencias', 'Participantes por ciudad y departamento', '/reportes/intermedio/competencia-detalle')}"></template>
+        
+        <!-- 7. Actividades Recientes -->
+        <template th:replace="~{components/card::simpleCard('Actividad Reciente', 'Actividades grupales del mes actual', '/reportes/intermedio/actividades-grupo')}"></template>
       </div>
     </div>
-    <!-- reportes avanzados -->
-    <div class="mt-8">
-      <div class="font-bold text-xl">Reportes Avanzados</div>
-      <div class="grid grid-cols-4 justify-center place-items-center w-full my-4 gap-4">
-        <template th:replace="~{components/card::simpleCard('Competencias populares', '...', '/reportes/asistencias-competencias')}"></template>
-        <template th:replace="~{components/card::simpleCard('Grupo con mas miembros', '...', '/reportes/top-grupo-usuarios')}"></template>
-        <template th:replace="~{components/card::simpleCard('Top grupos', '...', '/reportes/top-grupos')}"></template>
+
+    <!-- SECCIÓN 3: REPORTES AVANZADOS (Ya existentes) -->
+    <div class="mt-10">
+      <div class="font-bold text-xl text-gray-700 border-b pb-2 mb-4">Reportes Avanzados</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <template th:replace="~{components/card::simpleCard('Competencias Populares', 'Eventos con asistencia superior al promedio', '/reportes/asistencias-competencias')}"></template>
+        <template th:replace="~{components/card::simpleCard('Top Usuarios de Grupo', 'Miembros del grupo más grande', '/reportes/top-grupo-usuarios')}"></template>
+        <template th:replace="~{components/card::simpleCard('Top Grupos', 'Grupos más grandes que el promedio', '/reportes/top-grupos')}"></template>
       </div>
     </div>
+
+  </div>
+
+  <div th:fragment="scripts">
+    <!-- Scripts adicionales si son necesarios -->
   </div>
 </html>
