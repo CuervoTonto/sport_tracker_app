@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Título del Reporte</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
+    <style>
+      @page {
+        margin: 1cm 2cm 1.5cm 2cm;
+
+        @bottom-center {
+          content: "Página " counter(page) " de " counter(pages);
+          font-size: 9pt;
+          color: #555;
+        }
+      }
+
+      .page-break-avoid {
+        page-break-inside: avoid;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 11pt;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div
+        class="page-break-avoid"
+        th:classappend="${'p-4 text-center border-b-2 border-blue-500'}"
+      >
+        <h1
+          th:classappend="${'text-3xl font-bold text-blue-700'}"
+          th:text="${tituloReporte}"
+        >
+        </h1>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="page-break-avoid"
+        th:classappend="${'mt-6 mb-8 p-4 bg-yellow-50'}"
+      >
+        <h2 th:classappend="${'text-xl font-semibold mb-2'}">
+          Usuarios del grupo mas grande
+        </h2>
+      </section>
+
+      <section>
+        <h3
+          th:classappend="${'text-xl font-semibold mb-2 page-break-before: always;'}"
+        >
+          Usuarios 
+        </h3>
+        <table class="page-break-avoid table">
+          <thead>
+            <tr>
+              <th th:classappend="${'w-1/6'}">Username</th>
+              <th th:classappend="${'w-1/6'}">Nombres</th>
+              <th th:classappend="${'w-1/6'}">Apellidos</th>
+              <th th:classappend="${'w-2/6'}">Correo</th>
+              <th th:classappend="${'w-1/6'}">Celular</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="item : ${items}">
+              <td th:text="${item.username}"></td>
+              <td th:text="${item.nombres}"></td>
+              <td th:text="${item.apellidos}"></td>
+              <td th:text="${item.correo}"></td>
+              <td th:text="${item.celular}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

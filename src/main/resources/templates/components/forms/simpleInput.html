@@ -1,0 +1,10 @@
+<div
+  th:replace="~{components/forms/input::formInput(${name}, ~{::content})}"
+  th:fragment="formSimpleInput(name, type, placeholder)"
+>
+  <input
+    class="pt-2 w-full outline-none"
+    th:attr="type='{$type}' ?: '', placeholder='{$placeholder}' ?: '', name='${name}' ?: ''"
+    th:fragment="content"
+  />
+</div>

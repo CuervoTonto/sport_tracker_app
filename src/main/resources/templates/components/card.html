@@ -1,0 +1,10 @@
+<div class="w-full h-full bg-white flex justify-center items-center p-4 rounded-xl shadow" th:fragment="card(content)">
+  <div th:replace="${content}"></div>
+</div>
+
+<a class="w-full h-full cursor-pointer" th:href="${route}" th:fragment="simpleCard(title, content, route)" th:insert="~{::card(~{::content})}">
+  <div th:fragment="content">
+    <div class="text-center text-xl text-blue-800 font-bold" th:text="${title}">Titulo</div>
+    <div class="text-center mt-1" th:content="content">Contenido</div>
+  </div>
+</a>

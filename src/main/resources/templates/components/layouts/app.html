@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es" class="h-full bg-gray-100" th:fragment="appLayout(title, content, scripts)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="'Admin | ' + ${title}"></title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div class="flex h-screen bg-slate-100 w-full overflow-y-auto">
+      <div th:replace="~{components/bars/sidebar}"></div>
+      <div class="overflow-x-auto w-full">
+        <div th:replace="${content} ?: ~{}"></div>
+      </div>
+    </div>
+
+    <div th:replace="${scripts} ?: ~{}" class="hidden">
+      <script src="/js/isLoged.js"></script>
+    </div>
+  </body>
+</html>

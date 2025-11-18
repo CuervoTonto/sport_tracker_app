@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es" th:fragment="authLayout(title, content, scripts)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="'Sport Tracker | ' + ${title}">Sport Tracker</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div th:replace="${content}">
+      Contenido plantilla
+    </div>
+
+    <div th:replace="${scripts}"></div>
+  </body>
+</html>

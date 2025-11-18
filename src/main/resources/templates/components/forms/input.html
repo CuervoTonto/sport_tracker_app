@@ -1,0 +1,14 @@
+<label
+  th:fragment="input(type, name, label, placeholder, extraClasses)"
+  class="input-field"
+  th:classappend="${extraClasses} ?: ''"
+>
+  <div class="input-field-label" th:text="${label}"></div>
+  <input
+    class="pt-2 w-full outline-none"
+    th:name="${name}"
+    th:label="${name}"
+    th:placeholder="${placeholder} ?: ''"
+    th:fragment="content"
+  />
+</label>

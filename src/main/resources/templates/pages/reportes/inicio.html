@@ -1,0 +1,27 @@
+<html th:replace="~{components/layouts/app::appLayout('hola', ~{::content}, ~{::scripts})}">
+  <div class="w-full h-full p-7" th:fragment="content">
+    <!-- reportes simple -->
+    <div class="">
+      <div class="font-bold text-xl">Reportes Simples</div>
+      <div class="grid grid-cols-4 justify-center place-items-center w-full my-4 gap-4">
+        <template th:replace="~{components/card::simpleCard('prueba', 'contenido prueba', null)}"></template>
+      </div>
+    </div>
+    <!-- reportes intermedios -->
+    <div class="mt-8">
+      <div class="font-bold text-xl">Reportes Intermedios</div>
+      <div class="grid grid-cols-4 justify-center place-items-center w-full my-4 gap-4">
+        <template th:replace="~{components/card::simpleCard('prueba', 'contenido prueba', null)}"></template>
+      </div>
+    </div>
+    <!-- reportes avanzados -->
+    <div class="mt-8">
+      <div class="font-bold text-xl">Reportes Avanzados</div>
+      <div class="grid grid-cols-4 justify-center place-items-center w-full my-4 gap-4">
+        <template th:replace="~{components/card::simpleCard('Competencias populares', '...', '/reportes/asistencias-competencias')}"></template>
+        <template th:replace="~{components/card::simpleCard('Grupo con mas miembros', '...', '/reportes/top-grupo-usuarios')}"></template>
+        <template th:replace="~{components/card::simpleCard('Top grupos', '...', '/reportes/top-grupos')}"></template>
+      </div>
+    </div>
+  </div>
+</html>
